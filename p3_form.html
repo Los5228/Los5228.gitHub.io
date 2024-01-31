@@ -1,0 +1,79 @@
+<!Doctype html>
+<html> 
+<head> Contact Me </head>
+<title> Contact Me </title>
+<body>
+<h1> This is my Third page - Biography </h1> 
+<nav style='background-color:pink; Text-align:center; font-weight:bold; fort-weight:bold; font-size:150%'>
+<a href='p1_aboutme .html'> About Me </a> &nbsp &nbsp
+<a href='p2_hobby_html.html'> Hobby </a> &nbsp &nbsp
+<a href='p3_form.html'> Contact Me </a>&nbsp &nbsp
+<a href='p4_artwork.html'> ArtWork </a>&nbsp &nbsp
+<a href='p5_filters_html.html'> Filterd </a>
+</nav>
+<style>
+a:link{ color: purple; 
+text-decoration:none;}
+a:visited{ colon: brown;		
+text-decoration:none;}
+a:hover{ color: blue;
+text-decoration:underline;}
+a:active{ color: black;
+text-decoration:underline;}
+input[type=submit]{
+background-color:green; color:white; padding: 15px 80px; }
+
+</style>
+<h2> My Contact Form </h2>
+<form>
+       <Label> First Name: <input type ='text'> </label> 
+       <br> <br>
+        <label> Last Name: <input type ='text'> <label> 
+    <br> <br>
+                 <p> <b> Best Way of Contact </b></p>
+    <br>  
+        <label> What do you prefer? </label> &nbsp &nbsp
+            <select id='contactway'> 
+                <option value='cell'> Cell Phone </option>    
+                <option value='Email'> Email </option>
+                <option value='vCall'> Video Call </option>
+                <option value='inPerson'> In Person Meeting </option>
+             </select> <br><br>
+
+             <fieldset>  <!-- Radio Type Menu-->
+                <legend> Which is our closest office? (choose one) </legend>
+                     <input type="radio" name="chioff" > 
+                         <label> Chicago - northside </label> <br> <br>
+                     <input type="radio" name="chioff" >       
+                         <label> Chicago - Downtown </label> <br><br>
+                     <input type="radio" name="chioff" >
+                         <label> Chicago - southside </label>
+
+                 </fieldset>
+
+   <h3> add labels to ask user for Date of Birth </h3>       <!--month/date/year -->
+
+            <label> Date of Birth </label>
+                <input type ='date'> <br> <br>
+				
+  <!--- Makea label to take the date of visit from the user-->
+           <label> Date of visit </label>
+                <input type ='date'> <br> <br>
+                   
+  <!-- Input a color type -->
+            <label> Select your favorite color: </label>
+                <input type ='color'> <br> <br>
+
+  <!--Input a Number-->
+         <label> What is your favorite number: </label>
+                <input type ='number' min='0' max='50'> <br> <br>
+
+  <!--attachinga file -->
+     <label> Attach your Buiness Plan/Resume </label>
+                <input type ='file'> <br> <br>
+<!-- Creating a Sumit & Reset button -->
+
+        <input type='submit' value='submit'>
+        <input type='reset' value='Reset'>
+</form>
+			 

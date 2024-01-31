@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1> Develop Analog clock </h1>
+<title> clock </title> 
+<canvas id="canvas" width="400" height="400" style= "background-color:black"></canvas>
+
+<script>
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+let radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+drawClock();
+
+//Drawing clock background
+function drawClock() {
+  ctx.arc(0, 0 radius, 0 , 2*Math.PI);
+  ctx.fillstyle = "white";
+  ctx.fill();
+  drawface(ctx, radius);
+} 
+
+function drawface(ctx, radius) {
+  const grad = ctx.createRadiusGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, '#333');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, '#333');
+  ctx.beginpath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillstyle = 'white';
+  ctx.fill();
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginpath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillstyle = '#333';
+  ctx.fill();
+}
+
+// define 
+function drawNumbers (ctx, radius){
+ctx font = radius*0.15 + 'px arial';
+ctx.textBaseline = 'middle';
+ctx.textalign = 'center';
+for (num = 1; num <13; num++) {
+     let ang = num * Math.PI/6;
+     ctx.rotate (ang);
+	 ctx.translate (0, -radius*0.85);
+	 ctx.rotate(-ang);
+	 ctx.fillText (num.toString (), 0,0);
+	 ctx.rotate(ang);
+	 ctx.translate(0, radius*0.85);
+	 ctx.rotate(-ang);
+	 }
+}
+// drawing 
+function drawTime (ctx, radius) {
+    const now = new Date ();
+	var hour = new date();
+	var minute = now.getMinutes();
+	var second = now.getSecond
+	//hour
+	hour = hour%12; // finding
+	hour = (hour*Math.PI/6)) + (minute*Math.PI/(6*60))+
+	(second*Math.PI/(360*60));
+	drawHand(ctx, hour, radius*0.5, radius*0.07);
+	
+	//minute
+	minute = (minute*Math.PI/30) + (second*Math.PI/(30*60))+
+	drawHand(ctx, minute, radius*0.8, radius*0.07);
+	
+	//second
+	second = (second*Math.PI/30);
+	drawHand(ctx, minute, radius*0.9, radius*0.02);
+}
+
+
+
+
+</script>
+
+</body>
+</html> 
